@@ -1,20 +1,18 @@
-import {takeLatest, call, put, select} from 'redux-saga/effects'
-import {ADD_TODO_REQUEST, addTodoFailure, addTodoSuccess} from '../actions'
-import {getNewTodo} from '../reducers'
+import {takeLatest, call, put} from 'redux-saga/effects'
+import {DELETE_TODO_REQUEST, deleteTodoFailure, deleteTodoSuccess} from '../actions'
 import {sendRequest} from '../../../core/api'
 
-function* addTodo() {
+function* deleteTodo({payload}) {
   try{
-    const todo = yield select(getNewTodo);
-    const data = yield call(sendRequest, {url: '/api/addTodo', method: 'post', data: {todo}});
+    const data = yield call(sendRequest, {url: '/api/deleteTodo', method: 'post', data: {id: payload.id}});
 
-    yield put(addTodoSuccess(data));
+    yield put(deleteTodoSuccess(data));
   }
   catch (e) {
-    yield put(addTodoFailure('Произошла ошибка при добавлении данных'))
+    yield put(deleteTodoFailure('Произошла ошибка при удалении'))
   }
 }
 
 export default function* () {
-  yield takeLatest(ADD_TODO_REQUEST, addTodo);
+  yield takeLatest(DELETE_TODO_REQUEST, deleteTodo);
 }
