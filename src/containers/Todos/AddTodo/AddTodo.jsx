@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
 import {connect} from 'react-redux'
-import {getNewTodo} from '../../store/todo/reducers'
-import {changeNewTodo, addTodoRequest} from '../../store/todo/actions'
-
+import {getNewTodo} from '../../../store/todo/reducers'
+import {changeNewTodo, addTodoRequest} from '../../../store/todo/actions'
 
 const AddTodo = (props) => {
   const {value} = props;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Route, Switch} from 'react-router-dom'
-import Todos from "./Todos/";
+import Todos from "../Todos";
 
 class App extends Component {
 

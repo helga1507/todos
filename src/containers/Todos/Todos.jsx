@@ -3,8 +3,8 @@ import {connect} from 'react-redux'
 import {getList, getIsLoad, getError} from '../../store/todo/reducers'
 import {getTodosRequest} from '../../store/todo/actions'
 import styled from 'styled-components'
-import AddTodo from "../AddTodo";
-import Item from "../Item";
+import AddTodo from "./AddTodo";
+import Item from "./Item";
 
 class Todos extends Component {
 

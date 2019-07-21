@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux'
-import {deleteTodoRequest} from '../../store/todo/actions'
+import {deleteTodoRequest} from '../../../store/todo/actions'
 import styled from 'styled-components'
-import folder from '../../icons/folder.svg'
-import trash from '../../icons/trash.svg'
+import folder from '../../../icons/folder.svg'
+import trash from '../../../icons/trash.svg'
 
 const Item = props => {
   const {name, id} = props;

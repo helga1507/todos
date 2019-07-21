@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux'
-import App from './components/App.jsx';
+import App from './containers/App';
 import {BrowserRouter} from 'react-router-dom'
 import * as serviceWorker from './serviceWorker';
 import store from './store/index.js'
